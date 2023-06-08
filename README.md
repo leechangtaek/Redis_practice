@@ -2,16 +2,16 @@
 환자 정보에 대한 기본적인 CRUD API 개발
 
 ## 개발기간 
-<br/><br/> 2023/06/01 프로젝트 세팅 및 H2 설정 완료
+2023/06/01 프로젝트 세팅 및 H2 설정 완료
 <br/><br/> 2023/06/06 ~ 2023/06/08 Entity 클래스 생성 및 CRUD API 개발
 
 ## 개발 환경
-<br/><br/> Project - Gradle - Groovy
+Project - Gradle - Groovy
 <br/><br/> Language - Java11(OpenJdk version 11.0.18)
 <br/><br/> Spring Boot 2.7.12
 
 ## 개발 내용
-<br/><br/> 1.환자등록 - @PostMapping("/patient") 
+1.환자등록 - @PostMapping("/patient") 
 <br/><br/> - CreatePatientRequest Dto로 환자의 정보를 받고, generatePatientNo 라는 메서드로 환자등록번호를 생성 후 환자를 등록합니다.
 <br/><br/> 2.환자수정 - @PutMapping("/patient") 
 <br/><br/> - EditPatientRequest Dto로 환자의 정보를 받아 수정합니다.
