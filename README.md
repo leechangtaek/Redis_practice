@@ -15,13 +15,12 @@
 <br/><br/> - CreatePatientRequest Dto로 환자의 정보를 받고, generatePatientNo 라는 메서드로 환자등록번호를 생성 후 환자를 등록합니다.
 <br/><br/> 2.환자수정 - @PutMapping("/patient") 
 <br/><br/> - EditPatientRequest Dto로 환자의 정보를 받아 수정합니다.
-<br/><br/> 3.환자삭제 - @PostMapping("/patient") 
-<br/><br/> - request로 환자의 정보를 받아 수정합니다.
-<br/><br/> 4.환자조회 - @PostMapping("/patient") 
-<br/><br/> - hospitalCounters는 병원 ID와 현재 발급된 번호에 대한 정보를 담는 자료 구조입니다. 이 구조체의 computeIfAbsent() 메서드는 해당 병원 ID에 대한 값을 찾아서 가져오고, 만약 해당 ID에 대한 값이 없다면 새로운 값을 AtomicInteger 객체로 만들고, 이를 해당 병원 ID의 데이터로 추가하도록 개발되었습니다.
-<br/><br/> 5.환자목록조회 - @PostMapping("/patient") 
-<br/><br/> - hospitalCounters는 병원 ID와 현재 발급된 번호에 대한 정보를 담는 자료 구조입니다. 이 구조체의 computeIfAbsent() 메서드는 해당 병원 ID에 대한 값을 찾아서 가져오고, 만약 해당 ID에 대한 값이 없다면 새로운 값을 AtomicInteger 객체로 만들고, 이를 해당 병원 ID의 데이터로 추가하도록 개발되었습니다.
-<br/><br/> - hospitalCounters는 병원 ID와 현재 발급된 번호에 대한 정보를 담는 자료 구조입니다. 이 구조체의 computeIfAbsent() 메서드는 해당 병원 ID에 대한 값을 찾아서 가져오고, 만약 해당 ID에 대한 값이 없다면 새로운 값을 AtomicInteger 객체로 만들고, 이를 해당 병원 ID의 데이터로 추가하도록 개발되었습니다.
+<br/><br/> 3.환자삭제 - @DeleteMapping("/patient/{patientId}") 
+<br/><br/> - id값을 파라미터로 받은 후 있으면 삭제합니다.
+<br/><br/> 4.환자조회 - @GetMapping("/patient/{patientId}") 
+<br/><br/> - id값을 파라미터로 받은 후 있으면 querydsl을 사용해 내원정보와 환자의 정보를 가져옵니다.
+<br/><br/> 5.환자목록조회 - @GetMapping("/patients") 
+<br/><br/> - pageSize와 동적 검색 조건을 받은 후 querydsl을 사용해 페이징 처리된 환자목록 정보를 가져옵니다.
 
 ## Dependency
 Spring Web
